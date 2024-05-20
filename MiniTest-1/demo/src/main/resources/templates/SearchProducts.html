@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Product By Name</title>
+    <style>
+        h1{
+            text-align: center;
+            font-size: 100px;
+            color: red;
+        }
+        table{
+            text-align: center;
+            overflow: auto;
+        }
+        th{
+            background-color: blue;
+            color: white;
+            width: 500px;
+            height: 100px;
+        }
+        td{
+            width: 400px;
+            height: 150px;
+        }
+    </style>
+</head>
+<body>
+<h1>List Products By Name</h1>
+<br>
+<table border="1">
+    <thead class="title">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Price</th>
+        <th>Picture</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="product : ${products}">
+        <td th:text="${product.id}"></td>
+        <td th:text="${product.name}"></td>
+        <td th:text="${product.description }"></td>
+        <td th:text="${product.price}"></td>
+        <td><img th:src="${product.thumbnail}" alt="Ảnh sản phẩm"></td>
+        <td>
+            <a th:href="@{/products/{id} (id = ${product.id})}">Xem chi tiết</a>
+        </td>
+    </tbody>
+</table>
+</body>
+</html>

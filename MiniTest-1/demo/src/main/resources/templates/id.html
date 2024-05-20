@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Product By Id</title>
+    <style>
+        h1{
+            text-align: center;
+            color: red;
+        }
+        h2{
+            text-align: center;
+            color: blue;
+        }
+        p{
+            font-size: 40px;
+            text-align: center;
+        }
+        img{
+            width: 100% ;
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+<h1 th:text="${product.name}" ></h1>
+<h2 >Description:</h2>
+    <p th:text="${product.description}"></p>
+<h2 >Price:</h2>
+    <p  th:text="${product.price}"></p>
+<h2>Image :</h2>
+    <img th:src="${product.thumbnail}"></img>
+<h2 >Product Rating:</h2>
+    <p  th:text="${product.rating}"></p>
+<h2>Price Discount:</h2>
+    <p th:text="${product.priceDiscount}"></p>
+</body>
+</html>
