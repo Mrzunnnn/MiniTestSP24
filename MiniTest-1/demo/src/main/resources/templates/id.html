@@ -27,7 +27,7 @@
 <h2 >Description:</h2>
     <p th:text="${product.description}"></p>
 <h2 >Price:</h2>
-    <p  th:text="${product.price}"></p>
+    <p  th:text="${product.price +'$'}"></p>
 <h2>Image :</h2>
     <img th:src="${product.thumbnail}"></img>
 <h2 >Product Rating:</h2>
